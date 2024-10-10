@@ -5,8 +5,8 @@ const Footer = () => {
         <div className="pt-20 pb-12">
             <div className="w-4/5 border-b-[1.2px] pb-8 border-b-slate-500 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div>
-                    <h1 className="text-[25px] uppercase font-semibold text-black mb-4">
-                        Shop
+                    <h1 className="text-[25px] font-semibold text-[#0771CD] mb-4">
+                        Walmart
                     </h1>
                     <p className="text-sm text-black opacity-60">
                         Lorem ipsum dolor sit amet consectetur, adipisicing

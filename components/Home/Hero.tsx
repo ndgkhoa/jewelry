@@ -19,7 +19,7 @@ const Hero = () => {
                         aspernatur dolore?
                     </p>
                     <div className="flex mt-6 items-center space-x-4">
-                        <Button size={'lg'} className="bg-blue-700">
+                        <Button size={'lg'} className="bg-[#0771CD]">
                             Shop Now
                         </Button>
                         <Button size={'lg'}>Explore More</Button>

@@ -16,7 +16,7 @@ const CartSidebar = ({ items }: Props) => {
     const addCartHandler = (item: CartItem) => {
         dispatch(addItem(item))
     }
-    const removeCartHandler = (id: number) => dispatch(removeItem({ id }))
+    const removeCartHandler = (id: string) => dispatch(removeItem({ id }))
 
     return (
         <div className="mt-6 h-full mb-6">

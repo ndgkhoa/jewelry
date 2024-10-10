@@ -1,4 +1,5 @@
-import { getAllCategory } from '@/services/api'
+import { getAllCategory } from '@/services/categoriesService'
+import type { Category } from '@/types/types'
 
 const Category = async () => {
     const categories: string[] = await getAllCategory()
@@ -20,6 +21,7 @@ const Category = async () => {
                     </div>
                 ))}
             </div>
+            )
         </div>
     )
 }

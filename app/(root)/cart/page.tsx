@@ -31,7 +31,7 @@ const Cart = () => {
         dispatch(addItem(item))
     }
 
-    const removeItemHandler = (id: number) => {
+    const removeItemHandler = (id: string) => {
         dispatch(removeItem({ id }))
     }
 

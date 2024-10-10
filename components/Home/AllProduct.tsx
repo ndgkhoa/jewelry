@@ -1,6 +1,6 @@
 'use client'
 
-import { getAllProduct } from '@/services/api'
+import { getAllProduct } from '@/services/productsService'
 import { Product } from '@/types/types'
 import { Loader } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -10,19 +10,20 @@ const AllProduct = () => {
     const [products, setProducts] = useState<Product[] | null>(null)
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        const getData = async () => {
-            setLoading(true)
-            try {
-                const products: Product[] = await getAllProduct()
-                setProducts(products)
-            } catch (error) {
-                console.log(error)
-            } finally {
-                setLoading(false)
-            }
+    const fetchProducts = async () => {
+        setLoading(true)
+        try {
+            const products: Product[] = await getAllProduct()
+            setProducts(products)
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setLoading(false)
         }
-        getData()
+    }
+
+    useEffect(() => {
+        fetchProducts()
     }, [])
 
     return (
