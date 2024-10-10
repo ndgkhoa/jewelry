@@ -1,6 +1,6 @@
 'use client'
 
-import { getAllProduct } from '@/services/api'
+import { getAllProduct } from '@/services/productsService'
 import { Product } from '@/types/types'
 import { Loader } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -10,19 +10,20 @@ const AllProduct = () => {
     const [products, setProducts] = useState<Product[] | null>(null)
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        const getData = async () => {
-            setLoading(true)
-            try {
-                const products: Product[] = await getAllProduct()
-                setProducts(products)
-            } catch (error) {
-                console.log(error)
-            } finally {
-                setLoading(false)
-            }
+    const fetchProducts = async () => {
+        setLoading(true)
+        try {
+            const products: Product[] = await getAllProduct()
+            setProducts(products)
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setLoading(false)
         }
-        getData()
+    }
+
+    useEffect(() => {
+        fetchProducts()
     }, [])
 
     return (
@@ -35,7 +36,7 @@ const AllProduct = () => {
             ) : (
                 <div className="w-4/5 mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-12">
                     {products?.map((product) => (
-                        <ProductCard key={product.id} product={product} />
+                        <ProductCard key={product._id} product={product} />
                     ))}
                 </div>
             )}

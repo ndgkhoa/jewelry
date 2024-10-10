@@ -26,13 +26,13 @@ const ProductCard = ({ product }: Props) => {
 
     return (
         <div className="p-4">
-            <div className="w-full h-[150px]">
-                <Link href={`/product/product-details/${product.id}`}>
+            <div className="w-full h-[150px] flex items-center justify-center">
+                <Link href={`/product/product-details/${product._id}`}>
                     <Image
                         src={product.image}
                         alt={product.title}
-                        width={100}
-                        height={100}
+                        width={200}
+                        height={200}
                         className="cursor-pointer object-contain"
                     />
                 </Link>
@@ -40,7 +40,7 @@ const ProductCard = ({ product }: Props) => {
             <p className="mt-5 text-xs capitalize text-gray-600">
                 {product.category}
             </p>
-            <Link href={`/product/product-details/${product.id}`}>
+            <Link href={`/product/product-details/${product._id}`}>
                 <h1 className="text-lg cursor-pointer hover:text-blue-900 transition-all hover:underline sm:w-full sm:truncate mt-2 text-black font-semibold">
                     {product.title}
                 </h1>

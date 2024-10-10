@@ -1,5 +1,13 @@
+export interface Category {
+    _id: string
+    name: string
+    description: string
+    createdAt: Date
+    updatedAt: Date
+}
+
 export interface Product {
-    id: number
+    _id: string
     title: string
     price: number
     description: string
@@ -9,10 +17,12 @@ export interface Product {
         rate: number
         count: number
     }
+    createdAt: Date
+    updatedAt: Date
 }
 
 export interface CartItem {
-    id: number
+    _id: string
     title: string
     price: number
     category: string

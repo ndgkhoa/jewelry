@@ -1,12 +1,16 @@
-import { getProductByCategory, getSingleProduct } from '@/services/api'
 import { Product } from '@/types/types'
 import { StarIcon } from 'lucide-react'
 import Image from 'next/image'
 import AddToCart from './add-cart'
 import ProductCard from '@/components/Home/ProductCard'
+import {
+    getProductByCategory,
+    getSingleProduct,
+} from '@/services/productsService'
 
 const ProductDetails = async ({ params }: { params: { id: string } }) => {
     const id = params.id
+
     const singleProduct: Product = await getSingleProduct(id)
     const relatedProduct: Product[] = await getProductByCategory(
         singleProduct.category,
@@ -56,9 +60,6 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                         Category : {singleProduct?.category}
                     </p>
                     <p className="mt-2 text-sm text-black text-opacity-70 font-semibold">
-                        Tag : shop
-                    </p>
-                    <p className="mt-2 text-sm text-black text-opacity-70 font-semibold">
                         SKU : {Math.random() * 500}
                     </p>
                     <AddToCart product={singleProduct} />
@@ -70,7 +71,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                 </h1>
                 <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
                     {relatedProduct.map((product) => (
-                        <ProductCard key={product.id} product={product} />
+                        <ProductCard key={product._id} product={product} />
                     ))}
                 </div>
             </div>
