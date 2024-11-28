@@ -39,7 +39,7 @@ const CartSidebar = ({ items }: Props) => {
                 <div>
                     {items?.map((item) => (
                         <div
-                            key={item.id}
+                            key={item._id}
                             className="pb-4 border-b-2 border-gray-300 border-opacity-60 p-4"
                         >
                             <div>
@@ -64,7 +64,7 @@ const CartSidebar = ({ items }: Props) => {
                                 <div className="flex items-center space-x-4">
                                     <Button
                                         onClick={() =>
-                                            removeCartHandler(item.id)
+                                            removeCartHandler(item._id)
                                         }
                                         size={'sm'}
                                         variant={'destructive'}

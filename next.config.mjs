@@ -4,11 +4,11 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'fakestoreapi.com',
+                hostname: 'cdnv2.tgdd.vn',
             },
             {
                 protocol: 'https',
-                hostname: 'bizweb.dktcdn.net',
+                hostname: 'cdn.tgdd.vn',
             },
         ],
     },

@@ -1,5 +1,5 @@
 export interface Category {
-    id: string
+    _id: string
     name: string
     description: string
     createdAt: Date
@@ -7,7 +7,7 @@ export interface Category {
 }
 
 export interface Product {
-    id: string
+    _id: string
     title: string
     price: number
     description: string
@@ -22,7 +22,7 @@ export interface Product {
 }
 
 export interface CartItem {
-    id: string
+    _id: string
     title: string
     price: number
     category: string

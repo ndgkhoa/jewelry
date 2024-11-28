@@ -26,19 +26,18 @@ const ProductCard = ({ product }: Props) => {
 
     return (
         <div className="p-4">
-            <div className="w-[200px] h-[150px]">
+            <div className="w-full h-[300px] relative overflow-hidden">
                 <Image
                     src={product.image}
                     alt={product.title}
-                    width={100}
-                    height={100}
-                    className="w-[80%] h-[80%] object-contain"
+                    fill
+                    className="object-cover"
                 />
             </div>
             <p className="mt-5 text-xs capitalize text-gray-600">
                 {product.category}
             </p>
-            <Link href={`/product/product-details/${product.id}`}>
+            <Link href={`/product/product-details/${product._id}`}>
                 <h1 className="text-lg cursor-pointer hover:text-blue-900 transition-all hover:underline sm:w-full sm:truncate mt-2 text-black font-semibold">
                     {product.title}
                 </h1>

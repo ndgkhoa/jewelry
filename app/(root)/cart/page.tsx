@@ -66,7 +66,7 @@ const Cart = () => {
                             Your cart ({totalQuantity} items)
                         </h1>
                         {items.map((item) => (
-                            <div key={item.id}>
+                            <div key={item._id}>
                                 <div className="flex pb-6 mt-2 p-5 border-b-[1.5px] border-opacity-25 border-gray-700 items-center space-x-10">
                                     <div>
                                         <Image
@@ -99,7 +99,7 @@ const Cart = () => {
                                             </Button>
                                             <Button
                                                 onClick={() =>
-                                                    removeItemHandler(item.id)
+                                                    removeItemHandler(item._id)
                                                 }
                                                 variant={'destructive'}
                                             >

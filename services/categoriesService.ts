@@ -1,5 +1,5 @@
 export async function getAllCategory() {
-    const response = await fetch(`https://fakestoreapi.com/products/categories`)
+    const response = await fetch('/api/category')
 
     return response.json()
 }
